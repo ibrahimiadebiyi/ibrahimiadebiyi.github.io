@@ -26,9 +26,10 @@
   <hr />
 
   <footer>
-    Ibrahim Ismail-Adebiyi, {new Date().getFullYear()} /
-    <a href="https://github.com/ibrahimiadebiyi/ibrahimiadebiyi.github.io">source</a>
-  </footer>
+  Ibrahim Ismail-Adebiyi, {new Date().getFullYear()} /
+  <a href="https://github.com/ibrahimiadebiyi/ibrahimiadebiyi.github.io">source</a> /
+  design inspired by <a href="https://www.tannerkrewson.com">Tanner Krewson</a>
+</footer>
 </div>
 
 <style>
