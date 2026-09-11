@@ -1,5 +1,5 @@
 <script lang="ts">
-  import  teaching  from '$lib/teaching';
+  import { teaching } from '$lib/teaching';
 </script>
 
 <svelte:head>
