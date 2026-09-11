@@ -3,8 +3,8 @@
 </script>
 
 <svelte:head>
-  <title>Publications · Remi Lastname</title>
-  <meta name="description" content="Research publications by Remi Lastname." />
+  <title>Publications · Ibrahim Ismail-Adebiyi</title>
+  <meta name="description" content="Research publications by Ibrahim Ismail-Adebiyi." />
 </svelte:head>
 
 <h2>Publications</h2>

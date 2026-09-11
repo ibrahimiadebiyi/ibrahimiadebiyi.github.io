@@ -3,8 +3,8 @@
 </script>
 
 <svelte:head>
-  <title>Projects · Remi Lastname</title>
-  <meta name="description" content="Projects by Remi Lastname." />
+  <title>Projects · Ibrahim Ismail-Adebiyi</title>
+  <meta name="description" content="Projects by Ibrahim Ismail-Adebiyi." />
 </svelte:head>
 
 <h2>Projects</h2>

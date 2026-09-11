@@ -15,6 +15,6 @@ export const projects: Project[] = [
     name: 'Personal site',
     year: 2026,
     description: 'A small academic homepage built with SvelteKit.',
-    links: [{ label: 'source', href: 'https://github.com/yourusername/yourusername.github.io' }]
+    links: [{ label: 'source', href: 'https://github.com/ibrahimiadebiyi/ibrahimiadebiyi.github.io' }]
   }
 ];

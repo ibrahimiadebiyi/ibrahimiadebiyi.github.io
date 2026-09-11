@@ -14,6 +14,7 @@
       <a href="/">home</a> /
       <a href="/publications">publications</a> /
       <a href="/projects">projects</a> /
+      <a href="/teaching">teaching</a> /
       <!-- <a href="/cv.pdf">cv</a> / -->
       <a href="mailto:ismai128@umn.edu">email</a> /
       <a href="https://github.com/ibrahimiadebiyi">github</a> /
