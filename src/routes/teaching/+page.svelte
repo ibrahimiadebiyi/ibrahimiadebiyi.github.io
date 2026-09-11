@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-  <title>Publications · Ibrahim Ismail-Adebiyi</title>
+  <title>Teaching · Ibrahim Ismail-Adebiyi</title>
   <meta name="description" content="Teaching Experience for Ibrahim Ismail-Adebiyi." />
 </svelte:head>
 

@@ -4,22 +4,25 @@ export type TeachingLink = {
 };
 
 export type Teaching = {
-  title: string;
-  instructors: string;
-  venue: string;
-  year: number;
-  links: TeachingLink[];
+  code: string;          // 'CSCI 5609'
+  title: string;         // 'Visualization'
+  role: string;          // 'Teaching Assistant' | 'Grader' | 'Guest Lecturer'
+  institution: string;   // 'University of Minnesota'
+  terms: string[];       // ['Fall 2025', 'Spring 2026'] — sorts and displays cleanly
+  instructor?: string;   // whose course it was, if worth naming
+  blurb?: string;        // one line: what you actually did
+  links?: TeachingLink[];
 };
 
 export const teaching: Teaching[] = [
-  // {
-  //   title: 'Attention Is All You Need',
-  //   authors: 'Ashish Vaswani et al.',
-  //   venue: 'NeurIPS',
-  //   year: 2017,
-  //   links: [
-  //     { label: 'paper', href: 'https://arxiv.org/abs/1706.03762' },
-  //     { label: 'code', href: 'https://github.com/tensorflow/tensor2tensor' }
-  //   ]
-  // }
+  {
+    code: '',
+    title: '',
+    role: '',
+    institution: 'University of Minnesota',
+    terms: [''],
+    instructor: '',
+    blurb: '',
+    links: []
+  }
 ];
