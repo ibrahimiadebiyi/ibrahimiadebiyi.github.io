@@ -1,17 +1,17 @@
-export type PublicationLink = {
+export type TeachingLink = {
   label: string;
   href: string;
 };
 
-export type Publication = {
+export type Teaching = {
   title: string;
-  authors: string;
+  instructors: string;
   venue: string;
   year: number;
-  links: PublicationLink[];
+  links: TeachingLink[];
 };
 
-export const publications: Publication[] = [
+export const teaching: Teaching[] = [
   // {
   //   title: 'Attention Is All You Need',
   //   authors: 'Ashish Vaswani et al.',
