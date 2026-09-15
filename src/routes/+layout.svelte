@@ -12,12 +12,13 @@
     <p class="role">Master's Student · University of Minnesota</p>
     <nav>
       <a href="/">home</a> /
-      <a href="/publications">publications</a> /
-      <a href="/projects">projects</a> /
       <a href="/teaching">teaching</a> /
+      <a href="/projects">projects</a> /
+      <a href="/publications">publications</a> /
       <!-- <a href="/cv.pdf">cv</a> / -->
       <a href="mailto:ismai128@umn.edu">email</a> /
       <a href="https://github.com/ibrahimiadebiyi">github</a> /
+      <a href="https://www.linkedin.com/in/ibrahim-iadebiyi/">linkedin</a>
       <!-- <a href="https://scholar.google.com/citations?user=...">scholar</a> -->
     </nav>
   </header>

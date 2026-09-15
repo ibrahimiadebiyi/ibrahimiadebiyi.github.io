@@ -9,6 +9,18 @@
   // Index of the active project, so the rail can mark everything above it as read.
   let activeIndex = $derived(projects.findIndex((p) => p.slug === active));
 
+  // Bottom index runs newest first. Reads the latest 4-digit year out of `period`,
+  // so "2024-2026" and "Spring 2026" both sort as 2026. Anything without a year
+  // sorts last. The main flow keeps the authored order in $lib/projects.
+  const latestYear = (period: string) => {
+    const years = period.match(/\d{4}/g);
+    return years ? Math.max(...years.map(Number)) : -Infinity;
+  };
+
+  let byNewest = $derived(
+    [...projects].sort((a, b) => latestYear(b.period) - latestYear(a.period))
+  );
+
   $effect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -55,7 +67,11 @@
       {#each projects as project, i (project.slug)}
         <li class:current={active === project.slug} class:read={i < activeIndex}>
           <a href="#{project.slug}" aria-current={active === project.slug ? 'true' : undefined}>
-            <img src={project.image} alt="" aria-hidden="true" />
+            {#if project.image}
+              <img src={project.image} alt="" aria-hidden="true" />
+            {:else}
+              <span class="thumb-spacer" aria-hidden="true"></span>
+            {/if}
             <span>{project.title}</span>
           </a>
         </li>
@@ -65,12 +81,19 @@
 
   <main bind:this={main}>
     {#each projects as project, i (project.slug)}
-      <article class="project" id={project.slug} bind:this={articles[i]}>
+      <article
+        class="project"
+        class:no-image={!project.image}
+        id={project.slug}
+        bind:this={articles[i]}
+      >
         <h3>{project.title}</h3>
 
-        <figure>
-          <img src={project.image} alt={project.alt} loading="lazy" decoding="async" />
-        </figure>
+        {#if project.image}
+          <figure>
+            <img src={project.image} alt={project.alt} loading="lazy" decoding="async" />
+          </figure>
+        {/if}
 
         <div class="prose">
           <p class="meta">{project.kind}, {project.period}</p>
@@ -95,7 +118,7 @@
 <nav class="index" aria-label="All projects">
   <h3>All projects</h3>
   <ol>
-    {#each projects as project (project.slug)}
+    {#each byNewest as project (project.slug)}
       <li>
         <a href="#{project.slug}">{project.title}</a>
         <span class="period">{project.period}</span>
@@ -107,8 +130,8 @@
 <style>
   .layout {
     display: grid;
-    grid-template-columns: 12rem minmax(0, 1fr);
-    gap: 3rem;
+    grid-template-columns: 10rem minmax(0, 1fr);
+    gap: 2rem;
     align-items: start;
   }
 
@@ -181,17 +204,30 @@
     transform: none;
   }
 
+  /* Holds the thumbnail slot open for image-less projects so titles stay aligned. */
+  .thumb-spacer {
+    width: 1.75rem;
+    flex: none;
+  }
+
   /* ---- Projects ---- */
 
   .project {
     display: grid;
-    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    grid-template-columns: minmax(0, 6fr) minmax(0, 8fr);
     grid-template-areas:
       'title title'
       'figure prose';
-    column-gap: 2.5rem;
+    column-gap: 2rem;
     align-items: start;
     padding-bottom: 5rem;
+  }
+
+  .project.no-image {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'title'
+      'prose';
   }
 
   /* Sticky title stack: each heading pins, the next pushes it out. */
@@ -241,7 +277,7 @@
 
   .prose {
     grid-area: prose;
-    max-width: 62ch;
+    max-width: 78ch;
   }
 
   .prose p:first-child {
@@ -310,7 +346,8 @@
       display: none;
     }
 
-    .project {
+    .project,
+    .project.no-image {
       grid-template-columns: 1fr;
       grid-template-areas: 'title' 'figure' 'prose';
       row-gap: 1.5rem;
