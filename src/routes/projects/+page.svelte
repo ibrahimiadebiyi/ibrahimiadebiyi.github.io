@@ -105,7 +105,7 @@
           {#if project.links.length}
             <ul class="links">
               {#each project.links as link (link.href)}
-                <li><a href={link.href}>{link.label}</a></li>
+                <li><a href={link.href} target="_blank">{link.label}</a></li>
               {/each}
             </ul>
           {/if}
