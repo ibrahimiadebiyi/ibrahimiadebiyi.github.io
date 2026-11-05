@@ -34,7 +34,7 @@ export const projects: Project[] = [
     slug: 'code-mixed-benchmark',
     title: 'LLM code-mixed language benchmark',
     kind: 'Research, team project; dataset co-created',
-    period: '2025', // not recorded on the old site
+    period: '2025', 
     image: 'img/pipeline.png',
     alt: 'An image of the dataset creation pipeline',
     body: [
@@ -54,35 +54,6 @@ export const projects: Project[] = [
       { label: 'repo', href: 'https://github.com/ibrahimiadebiyi/SaintLingual' }
     ]
   },
-  // {
-  //   slug: 'circadian-gene-regulation',
-  //   title: 'Circadian gene regulation in Brassica rapa',
-  //   kind: 'Undergraduate research, Greenham Lab',
-  //   period: '2023–2024',
-  //   image: '',
-  //   alt: '',
-  //   body: [
-  //     'A pipeline identifying roughly 16,700 rhythmic genes in Brassica rapa using JTK and WGCNA, enabling prediction of promoter elements that control time-of-day expression. The work laid groundwork for a neural network to modify temporal gene expression for improved growth and stress tolerance.'
-  //   ],
-  //   links: [
-  //     {
-  //       label: 'abstract',
-  //       href: 'https://ugresearch.umn.edu/presentation-opportunities/spring-symposium/presenters-2024/Ibrahim-Ismail-Adebiyi'
-  //     }
-  //   ]
-  // },
-  // {
-  //   slug: 'image-editor',
-  //   title: 'Image editor',
-  //   kind: 'Open source',
-  //   period: '',
-  //   image: '',
-  //   alt: '',
-  //   body: [
-  //     'A browser image editing app with a C++ backend. Upload a photo, edit, download the result.'
-  //   ],
-  //   links: [{ label: 'live', href: 'https://ibrahimiadebiyi.github.io/Image-Editor/' }]
-  // },
   {
     slug: 'personal-site',
     title: 'Personal site',

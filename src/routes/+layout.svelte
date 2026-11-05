@@ -15,11 +15,9 @@
       <a href="/teaching">teaching</a> /
       <a href="/projects">projects</a> /
       <a href="/publications">publications</a> /
-      <!-- <a href="/cv.pdf">cv</a> / -->
       <a href="mailto:ismai128@umn.edu" target="_blank">email</a> /
       <a href="https://github.com/ibrahimiadebiyi" target="_blank">github</a> /
       <a href="https://www.linkedin.com/in/ibrahim-iadebiyi/" target="_blank">linkedin</a>
-      <!-- <a href="https://scholar.google.com/citations?user=...">scholar</a> -->
     </nav>
   </header>
 

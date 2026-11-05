@@ -6,13 +6,9 @@
   let articles: HTMLElement[] = [];
   let main: HTMLElement;
 
-  // Index of the active project, so the rail can mark everything above it as read.
   let activeIndex = $derived(projects.findIndex((p) => p.slug === active));
 
-  // Bottom index runs newest first. Reads the latest 4-digit year out of `period`,
-  // so "2024-2026" and "Spring 2026" both sort as 2026. Anything without a year
-  // sorts last. The main flow keeps the authored order in $lib/projects.
-  const latestYear = (period: string) => {
+    const latestYear = (period: string) => {
     const years = period.match(/\d{4}/g);
     return years ? Math.max(...years.map(Number)) : -Infinity;
   };
@@ -135,7 +131,6 @@
     align-items: start;
   }
 
-  /* ---- Rail: position tracker + progress ---- */
 
   .rail {
     position: sticky;
@@ -187,7 +182,6 @@
     opacity: 1;
   }
 
-  /* Thumbnail grows in once its section is reached — the handoff target. */
   .rail img {
     width: 1.75rem;
     height: 1.75rem;
@@ -204,13 +198,11 @@
     transform: none;
   }
 
-  /* Holds the thumbnail slot open for image-less projects so titles stay aligned. */
   .thumb-spacer {
     width: 1.75rem;
     flex: none;
   }
 
-  /* ---- Projects ---- */
 
   .project {
     display: grid;
@@ -230,7 +222,6 @@
       'prose';
   }
 
-  /* Sticky title stack: each heading pins, the next pushes it out. */
   .project h3 {
     grid-area: title;
     position: sticky;
@@ -256,9 +247,7 @@
     height: auto;
   }
 
-  /* Handoff: the figure shrinks toward the rail as its section leaves.
-     Needs scroll-driven timeline support; without it the figure just stays. */
-  @supports (animation-timeline: view()) {
+    @supports (animation-timeline: view()) {
     @media (prefers-reduced-motion: no-preference) {
       figure {
         animation: handoff linear both;
@@ -297,7 +286,6 @@
     margin-top: 2rem;
   }
 
-  /* ---- Bottom index ---- */
 
   .index {
     margin-top: 4rem;

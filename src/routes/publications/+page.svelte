@@ -2,7 +2,6 @@
   import { publications } from '$lib/publications';
   import { base } from '$app/paths';
 
-  // '/images/x.png' -> respects base path; full URLs pass through untouched
   const src = (path: string) => (path.startsWith('/') ? `${base}${path}` : path);
 </script>
 
@@ -53,7 +52,6 @@
     align-items: start;
   }
 
-  /* Every photo renders at exactly 200×150, cropped to fill */
   .thumb {
     width: 200px;
     height: 150px;
@@ -67,7 +65,6 @@
     margin-top: 0;
   }
 
-  /* Stack on narrow screens */
   @media (max-width: 560px) {
     article.has-image {
       grid-template-columns: 1fr;

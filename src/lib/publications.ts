@@ -9,8 +9,8 @@ export type Publication = {
   venue: string;
   year: number;
   links: PublicationLink[];
-  image?: string;     // '/images/vp-rafiah.png'
-  imageAlt?: string;  // short description for screen readers
+  image?: string;    
+  imageAlt?: string; 
 };
 
 export const publications: Publication[] = [

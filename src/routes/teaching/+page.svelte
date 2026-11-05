@@ -3,7 +3,6 @@
 
   const SEASON: Record<string, number> = { Spring: 0, Summer: 1, Fall: 2 };
 
-  // 'Fall 2024' -> 20242 so terms compare chronologically
   function termKey(term: string): number {
     const [season, year] = term.trim().split(/\s+/);
     return Number(year) * 10 + (SEASON[season] ?? 0);
@@ -13,7 +12,6 @@
     return [...t.terms].sort((a, b) => termKey(a) - termKey(b));
   }
 
-  // Long runs collapse to a range; short ones list every term
   function formatTerms(t: Teaching): string {
     const terms = sortedTerms(t);
     if (terms.length <= 3) return terms.join(', ');
@@ -24,7 +22,6 @@
     return Math.max(...t.terms.map(termKey));
   }
 
-  // Most recent course first
   const courses = [...teaching].sort((a, b) => latest(b) - latest(a));
 </script>
 
